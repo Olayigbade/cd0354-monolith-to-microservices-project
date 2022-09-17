@@ -15,9 +15,15 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node --build-arg NAME=${NAME} .
-  - docker tag simple-node olayigbadeolawale/simple-node:latest
+  - docker-compose -f docker-compose-build.yaml build --parallel
+  - docker tag udagram-api-feed olyigbadeolawale/udagram-api-feed:v1
+  - docker tag udagram-api-user olyigbadeolawale/udagram-api-user:v1
+  - docker tag udagram-frontend olyigbadeolawale/udagram-frontend:v1
+  - docker tag reverseproxy olyigbadeolawale/reverseproxy:v1
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push olayigbadeolawale/simple-node
+  - docker push olyigbadeolawale/udagram-api-feed
+  - docker push olyigbadeolawale/udagram-api-user
+  - docker push olayigbadeolawale/udagram-frontend
+  - docker push olayigbadeolawale/reverseproxy
