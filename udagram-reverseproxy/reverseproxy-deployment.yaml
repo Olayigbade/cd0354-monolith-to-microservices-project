@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: reverseproxy
-        image: olayigbadeolawale/reverseproxy:v2
+        image: olayigbadeolawale/reverseproxy:v3
         ports:
         - containerPort: 8080
         resources:
