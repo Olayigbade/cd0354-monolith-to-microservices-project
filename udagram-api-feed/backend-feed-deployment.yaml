@@ -16,18 +16,16 @@ spec:
     spec:
       containers:
       - name: udagram-api-user
-        image: olayigbadeolawale/udagram-api-feed:v3
+        image: olayigbadeolawale/udagram-api-feed:v2
         env:
-          - name: POSTGRES_DB
-            value: postgres
           - name: POSTGRES_USERNAME
             value: postgres
           - name: POSTGRES_PASSWORD
             value: Pilot500
           - name: POSTGRES_HOST
-            value: microservice.cax9vl6qftys.us-east-1.rds.amazonaws.com
+            value: eks.cvcomreuoz2p.us-east-1.rds.amazonaws.com
           - name: AWS_BUCKET
-            value: microservicewalezeal
+            value: microservicesola
           - name: AWS_REGION
             value: us-east-1
           - name: AWS_PROFILE
